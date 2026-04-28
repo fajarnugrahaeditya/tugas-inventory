@@ -6,14 +6,14 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    // tampilkan data
+    
     public function index()
     {
         $products = Product::with('category')->latest()->paginate(10);
         return view('products.index', compact('products'));
     }
 
-    // INSERT
+    
     public function insert()
     {
         $product = new Product;
@@ -30,17 +30,17 @@ class ProductController extends Controller
         return redirect('/products');
     }
 
-    // UPDATE
+    
     public function update($id = null)
     {
-        // cek kalau ID tidak diisi
+      
         if (!$id) {
             return "Tambahkan id dari product yang mau diupdate, misalnya /update/2";
         }
 
         $product = Product::find($id);
 
-        // cek kalau data tidak ditemukan
+        
         if (!$product) {
             return "Data tidak ditemukan";
         }
@@ -53,17 +53,17 @@ class ProductController extends Controller
         return redirect('/products');
     }
 
-    // DELETE
+    
     public function delete($id = null)
     {
-        // cek kalau ID tidak diisi
+       
         if (!$id) {
             return "Tambahkan id dari product yang mau didelete, misalnya /delete/2";
         }
 
         $product = Product::find($id);
 
-        // cek kalau data tidak ditemukan
+        
         if (!$product) {
             return "Data tidak ditemukan";
         }
