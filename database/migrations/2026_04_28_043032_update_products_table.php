@@ -12,7 +12,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->enum('status', ['tersedia', 'habis'])->default('tersedia');
             
-            // ubah price jadi bigInteger
+            
             $table->bigInteger('price')->change();
         });
     }
