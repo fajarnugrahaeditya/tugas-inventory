@@ -9,8 +9,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-      
+        // Seeder kategori
         $this->call(CategorySeeder::class);
+
+        // Seeder user login
+        $this->call(UserSeeder::class);
 
         
         User::factory()->create([

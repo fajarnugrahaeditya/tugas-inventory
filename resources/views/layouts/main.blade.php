@@ -47,53 +47,52 @@
 </head>
 
 <body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+        <a class="navbar-brand fw-bold" href="/home">
+            Inventory App
+        </a>
 
-            <a class="navbar-brand fw-bold" href="/">
-                Inventory App
-            </a>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
 
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
 
-            <div class="collapse navbar-collapse"
-                 id="navbarNav">
+            <ul class="navbar-nav">
 
-                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('home') ? 'active' : '' }}"
+                       href="/home">
+                        Home
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
-                           href="/">
-                            Home
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('products*') ? 'active' : '' }}"
+                       href="/products">
+                        Product
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('products*') ? 'active' : '' }}"
-                           href="/products">
-                            Product
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('categories*') ? 'active' : '' }}"
+                       href="/categories">
+                        Category
+                    </a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('categories*') ? 'active' : '' }}"
-                           href="/categories">
-                            Category
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- CONTENT -->
     <main class="container mt-5">
